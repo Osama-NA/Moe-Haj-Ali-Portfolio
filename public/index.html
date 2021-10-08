@@ -16,40 +16,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f8a4cbb026.js" crossorigin="anonymous"></script>
   </body>
 </html>
-
-<script>
-  // Mobile Navigation Bar Handling
-  $(document).scroll(() => {
-    if($(document).scrollTop() > 200){
-      $(".Header .container nav").css("background-color","rgb(20, 20, 20)");
-    }
-  })
-
-  //Scroll Action
-  $(".view-work-btn").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#View-Work").offset().top - 96}, 0);
-  });
-
-  $(".about-me-btn").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#About-Me").offset().top - 96}, 0);
-  });
-
-  $(".contact-me-btn").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#Contact-Me").offset().top - 96}, 0);
-  });
-
-  $(".view-images-btn").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".gallery").offset().top - 150}, 0);
-  });
-
-</script>

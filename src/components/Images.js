@@ -19,6 +19,7 @@ export const Images = () => {
 
     useEffect(() => {
         setView(viewTitle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [viewTitle]);
 
     const getTitleStyle = (title) => {

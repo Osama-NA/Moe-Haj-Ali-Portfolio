@@ -28,6 +28,7 @@ export const Header = () => {
     useEffect(() => {
         //Handle nav bar color on scroll event 
         window.addEventListener("scroll", handleNavColor);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleNavColor = () => {

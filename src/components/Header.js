@@ -27,14 +27,22 @@ export const Header = () => {
 
     useEffect(() => {
         //Handle nav bar color on scroll event 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleNavColor);
     }, []);
 
-    const handleScroll = () => {
-        if (window.scrollY < 200) {
-            setNavColor(navStyles.unfilled)
+    const handleNavColor = () => {
+        if (window.screen.width <= 900) {
+            if (window.scrollY < 80) {
+                setNavColor(navStyles.unfilled)
+            } else {
+                setNavColor(navStyles.filled)
+            }
         } else {
-            setNavColor(navStyles.filled)
+            if (window.scrollY < 200) {
+                setNavColor(navStyles.unfilled)
+            } else {
+                setNavColor(navStyles.filled)
+            }
         }
     } 
 
@@ -56,15 +64,15 @@ export const Header = () => {
     const getScrollPosition = (element) => {
         const position = parseInt(document.querySelector(element).offsetTop);
         const navHeight = parseInt(document.querySelector(".container nav").offsetHeight);
-        return position - navHeight;
+        return (position - navHeight);
     }
 
     return (
-        <div className= "Header" id= "Header">
+        <div className= "Header" >
             <img className="camera" src={cameraBackground} alt="Camera background" />
             <div className="container">
                 <nav style={navColor}>
-                    <h1><a href="#Header">Mohammad <span>|</span> Haj Ali</a></h1>
+                    <h1><a href="/">Mohammad <span>|</span> Haj Ali</a></h1>
                     <ul style={showNav? navStyles.show : navStyles.hide}>
                         <li><p onClick={scrollToViewWork}>View Work</p></li>
                         <li><p onClick={scrollToAboutMe}>About Me</p></li>
@@ -80,8 +88,8 @@ export const Header = () => {
                         <h1>Mohammad Haj Ali</h1>
                         <p>Hello there! I'm Mohammad, a photographer who can help you capture your good moments.</p>
                         <div className="info-buttons">
-                            <button><p className= "view-work-btn">View Work</p></button>
-                            <button><p className="contact-me-btn">Contact Me</p></button>
+                            <button><p className="view-work-btn" onClick={scrollToViewWork}>View Work</p></button>
+                            <button><p onClick={scrollToContactMe}>Contact Me</p></button>
                         </div>
                     </div>
                 </div>

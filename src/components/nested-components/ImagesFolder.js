@@ -13,6 +13,13 @@ export const ImagesFolder = ({title, image}) => {
 
     const handleView = () => {
         setView(title);
+        scrollToImages();
+    }
+
+    const scrollToImages = () => {
+        const position = parseInt(document.querySelector(".images").offsetTop);
+        const navHeight = parseInt(document.querySelector(".container nav").offsetHeight);
+        window.scrollTo(0, position - navHeight);
     }
 
     return (

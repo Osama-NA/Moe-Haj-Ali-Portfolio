@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import headerImage from '../images/header-img.PNG';
 import cameraBackground from '../images/camera-background.jpg';
+import {BackgroundParticles} from './particles/BackgroundParticles'
 
+const NAME = "Mohammad Haj Ali"
 export const Header = () => {
 
     const navStyles = {
@@ -32,18 +34,10 @@ export const Header = () => {
     }, []);
 
     const handleNavColor = () => {
-        if (window.screen.width <= 900) {
-            if (window.scrollY < 80) {
-                setNavColor(navStyles.unfilled)
-            } else {
-                setNavColor(navStyles.filled)
-            }
+        if (window.scrollY < 80) {
+            setNavColor(navStyles.unfilled)
         } else {
-            if (window.scrollY < 200) {
-                setNavColor(navStyles.unfilled)
-            } else {
-                setNavColor(navStyles.filled)
-            }
+            setNavColor(navStyles.filled)
         }
     } 
 
@@ -69,7 +63,7 @@ export const Header = () => {
     }
 
     return (
-        <div className= "Header" >
+        <div className="Header" >
             <img className="camera" src={cameraBackground} alt="Camera background" />
             <div className="container">
                 <nav style={navColor}>
@@ -86,7 +80,7 @@ export const Header = () => {
                         <img src={headerImage} alt="Mohammad Haj Ali" />
                     </div>
                     <div className="info">
-                        <h1>Mohammad Haj Ali</h1>
+                        <h1>{NAME}</h1>
                         <p>Hello there! I'm Mohammad, a photographer who can help you capture your good moments.</p>
                         <div className="info-buttons">
                             <button><p className="view-work-btn" onClick={scrollToViewWork}>View Work</p></button>
@@ -95,6 +89,7 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
+            <BackgroundParticles />
         </div>
     )
 }

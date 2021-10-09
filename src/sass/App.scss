@@ -46,7 +46,7 @@ $orange-font: rgb(252, 112, 87);
 
 .App {
   width: 100vw;
-  max-width: 1400px;
+  max-width: 1300px;
   font-size: 24px;
   font-weight: 200;
   text-align: center;
@@ -62,7 +62,7 @@ $orange-font: rgb(252, 112, 87);
 
     .camera {
       width: 100%;
-      max-width: 1400px;
+      max-width: 1300px;
       height: 100%;
       position: absolute;
       top: 0;
@@ -77,7 +77,7 @@ $orange-font: rgb(252, 112, 87);
       nav {
         position: fixed;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1300px;
         @include displayFlex(row, space-between, center);
         @include animate(scale-animation, 1.5s, ease, 0, 1);
 
@@ -99,7 +99,6 @@ $orange-font: rgb(252, 112, 87);
             }
           }
         }
-
         .menu-btn {
           display: none;
         }
@@ -546,7 +545,7 @@ $orange-font: rgb(252, 112, 87);
       flex-wrap: wrap;
 
       .contact-row {
-        margin: 2rem 1rem;
+        margin: 2rem 0;
         padding: 1rem 1.5rem;
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.062);
@@ -568,9 +567,15 @@ $orange-font: rgb(252, 112, 87);
         }
       }
     }
+    .contact-row:nth-child(1){
+      margin-right: 1rem;
+    }
+    .contact-row:nth-child(3){
+      margin-left: 1rem;
+    }
     .contact-form {
       font-family: "Saira Condensed", sans-serif;
-      width: 50%;
+      width: 51%;
       height: 100%;
       padding-bottom: 1rem;
       @include displayFlex(column, center, center);
